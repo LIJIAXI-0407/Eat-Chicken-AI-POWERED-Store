@@ -1,0 +1,63 @@
+.order-rectangle-wrapper {
+  margin-left: 34px;
+  margin-top: 32px;
+} 
+
+.order-welcome-container {
+  margin-left: -1000px; /* Adjust this value to move the WelcomeHeader left */
+  margin-top: 70px; /* Add margin-top to move the WelcomeHeader down */
+  /* You can add other positioning styles here if needed */
+} 
+
+.order-labels-row {
+  display: flex;
+  justify-content: space-between;
+  width: 1142.049px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  margin-bottom: 8px;
+}
+
+.order-label {
+  width: 134.129px;
+  height: 24.557px;
+  flex-shrink: 0;
+  color: #000;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.order-separator {
+  width: 1142.049px;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.20);
+  margin: 8px 24px;
+} 
+
+.order-data-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 8px 24px;
+  box-sizing: border-box;
+  margin-top: -4px;
+}
+
+.order-data-cell {
+  width: 134.129px;
+  color: #4A4A4A;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.3px;
+  padding: 0 8px;
+} 

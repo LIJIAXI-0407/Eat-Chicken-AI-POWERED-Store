@@ -1,0 +1,50 @@
+.main-content-header {
+  /* Remove padding as it's now on dashboard-main */
+  /* padding: 0 34px; */
+  box-sizing: border-box;
+  margin-bottom: 20px; /* Space below the header */
+}
+
+.welcome-header {
+  /* Keep original positioning relative to its container */
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.welcome-title {
+  color: #000;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+}
+
+.welcome-date {
+  color: rgba(0, 0, 0, 0.50);
+  font-family: Lato, Arial, sans-serif;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 200;
+  line-height: normal;
+  margin-top: 20px;
+  margin-left: -80px; /* Adjust negative margin-left to move the date left */
+}
+
+.add-item-button {
+  width: 117px;
+  height: 45px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #738A9A;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #FFF;
+  font-family: Lato, Arial, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  cursor: pointer;
+  margin-top: 0; /* 与 Welcome 标题对齐 */
+} 
