@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>顾客信息后台</title>
+    <style>
+        table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+        th, td { padding: 8px; border: 1px solid #ccc; text-align: left; }
+    </style>
+</head>
+<body>
+    <h2>全部顾客信息</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>手机号</th>
+                <th>性别</th>
+                <th>生日</th>
+                <th>邮箱</th>
+                <th>当前积分</th>
+                <th>预估消费积分</th>
+                <th>已购商品</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+                <td>{{ member.name }}</td>
+                <td>{{ member.phone }}</td>
+                <td>{{ member.gender }}</td>
+                <td>{{ member.birthday }}</td>
+                <td>{{ member.email }}</td>
+                <td>{{ member.points }}</td>
+                <td>{{ member.estimated_points }}</td>
+                <td>{{ member.products or '暂无记录' }}</td>
+                <td><a href="/customer/member/{{ member.phone }}/detail">查看详情</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

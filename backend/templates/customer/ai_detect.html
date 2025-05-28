@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>实时摄像头识别</title>
+    <style>
+        #video, #canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #canvas {
+            z-index: 10;
+        }
+        #wrapper {
+            position: relative;
+            width: 480px;
+            height: 360px;
+        }
+        #result {
+            margin-top: 380px;
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2>实时摄像头识别</h2>
+    <div id="wrapper">
+        <video id="video" width="480" height="360" autoplay muted playsinline></video>
+        <canvas id="canvas" width="480" height="360"></canvas>
+    </div>
+    <div id="result">识别结果显示区域</div>
+</div>
+
+<script src="/static/js/ai.js"></script>
+</body>
+</html>

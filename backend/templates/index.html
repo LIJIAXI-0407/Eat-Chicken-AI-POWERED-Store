@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>智能零售系统首页</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+      background-color: #f8f9fa;
+      position: relative;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 15px;
+      padding: 16px 32px;
+      font-size: 18px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    #robot-icon {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- 小机器人图标 -->
+  <img id="robot-icon" src="/static/img/robot_icon.png" alt="AI助手" onclick="goToAIChat()">
+
+  <h1>智能零售系统</h1>
+  <a class="btn" href="/customer/menu">进入客户端</a>
+  <a class="btn" href="/admin/menu">进入管理端</a>
+  <a class="btn" href="/customer/ai_demo">进入 AI 人数识别</a>
+
+  <script>
+    function goToAIChat() {
+      window.location.href = "/ai_chat";
+    }
+  </script>
+</body>
+</html>

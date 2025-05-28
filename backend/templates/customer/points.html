@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>积分查询与兑换</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body data-page="customer_points">
+    <h2>积分查询与兑换</h2>
+    <div>
+        <label>输入手机号: <input type="text" id="queryPhone" required></label>
+        <button id="queryButton">查询</button>
+    </div>
+    <div id="memberInfo" style="margin-top:20px;">
+        <!-- 显示会员信息和积分 -->
+    </div>
+    <div id="redemptionSection" style="display:none; margin-top:20px;">
+        <h3>兑换鸡蛋</h3>
+        <label>兑换盒数: <input type="number" id="redeemBoxes" value="1" min="1"></label>
+        <button id="redeemButton">兑换鸡蛋</button>
+    </div>
+    <div id="redemptionRecords" style="margin-top:20px;">
+        <h3>兑换历史</h3>
+        <table border="1" id="recordsTable">
+            <thead>
+                <tr>
+                    <th>时间</th>
+                    <th>盒数</th>
+                    <th>消耗积分</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 动态填充 -->
+            </tbody>
+        </table>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/static/js/customer.js"></script>
+</body>
+</html>

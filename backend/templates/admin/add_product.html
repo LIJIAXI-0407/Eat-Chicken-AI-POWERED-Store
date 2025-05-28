@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>添加商品</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body data-page="admin_add_product">
+    <h2>添加商品</h2>
+    <form id="addProductForm">
+        <label>商品名称: <input type="text" name="name" required></label><br>
+        <label>条码: <input type="text" name="barcode" required></label><br>
+        <label>价格: <input type="text" name="price" required></label><br>
+        <label>库存: <input type="text" name="stock" required></label><br>
+        <button type="submit">添加商品</button>
+    </form>
+    
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/static/js/admin.js"></script>
+</body>
+</html>

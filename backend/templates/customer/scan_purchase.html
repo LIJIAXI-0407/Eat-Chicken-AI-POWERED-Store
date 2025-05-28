@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>扫码购物</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+  <style>
+    #scanner-container {
+      width: 100%;
+      max-width: 600px;
+      margin: auto;
+      border: 2px solid #ccc;
+    }
+    #barcode-result {
+      margin-top: 20px;
+      font-size: 18px;
+      text-align: center;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">扫码购物</h1>
+
+  <div id="scanner-container"></div>
+  <div id="barcode-result">请将商品条码对准摄像头</div>
+
+  <script>
+    // 初始化 Quagga 扫码器
+    Quagga.init({
+      inputStream: {
+        name: "Live",
+        type: "LiveStream",
+        target: document.querySelector('#scanner-container'),
+        constraints: {
+          facingMode: "environment" // 用后置摄像头
+        }
+      },
+      decoder: {
+        readers: ["ean_reader", "code_128_reader", "upc_reader"]
+      }
+    }, function (err) {
+      if (err) {
+        console.error(err);
+        alert("无法启动摄像头，请检查权限或设备！");
+        return;
+      }
+      Quagga.start();
+    });
+
+    // 扫码成功回调
+    Quagga.onDetected(function (result) {
+      const code = result.codeResult.code;
+      document.getElementById('barcode-result').innerText = "扫描结果：" + code;
+
+      // 可选：自动停止扫描（防止重复）
+      Quagga.stop();
+
+      // 可选：发送到后端获取商品信息
+      /*
+      fetch('/customer/lookup_item', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ barcode: code })
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      });
+      */
+    });
+  </script>
+</body>
+</html>

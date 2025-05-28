@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>会员信息详情</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; }
+        .profile { margin-bottom: 30px; }
+        img { width: 150px; height: 150px; object-fit: cover; border-radius: 10px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+    </style>
+</head>
+<body>
+    <h1>会员信息详情</h1>
+
+    <div class="profile">
+        <img src="{{ member['photo'] or '/static/img/default.png' }}" alt="会员照片">
+        <p><strong>姓名：</strong>{{ member['name'] }}</p>
+        <p><strong>手机号：</strong>{{ member['phone'] }}</p>
+        <p><strong>性别：</strong>{{ member['gender'] or '未填写' }}</p>
+        <p><strong>生日：</strong>{{ member['birthday'] or '未填写' }}</p>
+        <p><strong>邮箱：</strong>{{ member['email'] or '未填写' }}</p>
+        <p><strong>积分：</strong>{{ member['points'] }}</p>
+    </div>
+
+    <h2>购买记录</h2>
+    {% if purchases %}
+        <table>
+            <thead>
+                <tr>
+                    <th>商品名称</th>
+                    <th>商品类别</th>
+                    <th>购买时间</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in purchases %}
+                <tr>
+                    <td>{{ item['product_name'] }}</td>
+                    <td>{{ item['category'] }}</td>
+                    <td>{{ item['purchased_at'] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>暂无购买记录。</p>
+    {% endif %}
+</body>
+</html>

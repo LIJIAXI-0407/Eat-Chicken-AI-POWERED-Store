@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>会员积分总览</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+</head>
+<body>
+    <h2>会员积分总览</h2>
+    <table border="1" id="membersTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>姓名</th>
+                <th>手机号</th>
+                <th>积分</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in members %}
+            <tr>
+                <td>{{ member['id'] }}</td>
+                <td>{{ member['name'] }}</td>
+                <td>{{ member['phone'] }}</td>
+                <td>{{ member['points'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
